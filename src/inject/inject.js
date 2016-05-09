@@ -24,14 +24,15 @@ if (get_imgur_id == null) {
                     if (json_obj.status == 'ok') {
                         if (json_obj.is_scamaz) {
                             $("body").prepend(
-                                '<h1 class="anti-scamaz" style="margin-bottom: 0px;background-color:black;color:red;">! SCAMAZ IMGUR BELOW !</h1><br><img id="wutface" style="height: 95vh" src="//i.imgur.com/GnX2t5H.png"><br>'
+                                '<h1 class="anti-scamaz" style="margin-bottom: 0px;background-color:black;color:red;">! SCAMAZ IMGUR BELOW !</h1><br><img id="wutface" style="height: 95vh" src="//scamaz.xyz/images/wutface.png"><br>'
                             );
                         }
 
                         $("body").append(
                             '<p class="anti-scamaz" style="margin:20px 0 0 0;">Format: <strong>' + json_obj.format + '</strong></p>' +
                             '<p class="anti-scamaz" style="margin:0;">Animated: <strong>' + (json_obj.is_animated ? 'Yes' : 'No') + '</strong></p>' +
-                            (json_obj.is_animated ? '<p class="anti-scamaz" style="margin:0 0 100px 0;">Duration: <strong>' + json_obj.duration + 's</strong></p>' : '')
+                            (json_obj.is_animated ? '<p class="anti-scamaz" style="margin:0 0 0 0;">Duration: <strong>' + json_obj.duration + 's</strong></p>' : '') +
+                            (json_obj.duration_warning ? '<p class="anti-scamaz" style="margin:0 0 0 0;"><span style="color:red;">Warning: </span><strong>' + json_obj.duration_warning + '</strong></p>' : '')
                         );
 
                         if (json_obj.is_scamaz) {
@@ -55,14 +56,18 @@ if (get_imgur_id == null) {
                                 '<p style="padding:0;">Gallery: <strong> Only the first image gets scanned</strong></p>' +
                                 '<p style="padding:0;">Format: <strong>' + json_obj.format + '</strong></p>' +
                                 '<p style="padding:0;">Animated: <strong>' + (json_obj.is_animated ? 'Yes' : 'No') + '</strong></p>' +
-                                (json_obj.is_animated ? '<p style="padding:0;">Duration: <strong>' + json_obj.duration + 's</strong></p></div>' : '</div>')
+                                (json_obj.is_animated ? '<p style="padding:0;">Duration: <strong>' + json_obj.duration + 's</strong></p>' : '') +
+                                (json_obj.duration_warning ? '<p style="padding:0;"><span style="color:red;">Warning: </span><strong>' + json_obj.duration_warning + '</strong></p>' : '') +
+                                '</div>'
                             );
                         } else {
                             $(".post-image").after(
                                 '<div style="width: 640px;padding: 20px;background: #2B2B2B;border-radius: 5px;position: relative;">' +
                                 '<p style="padding:0;">Format: <strong>' + json_obj.format + '</strong></p>' +
                                 '<p style="padding:0;">Animated: <strong>' + (json_obj.is_animated ? 'Yes' : 'No') + '</strong></p>' +
-                                (json_obj.is_animated ? '<p style="padding:0;">Duration: <strong>' + json_obj.duration + 's</strong></p></div>' : '</div>')
+                                (json_obj.is_animated ? '<p style="padding:0;">Duration: <strong>' + json_obj.duration + 's</strong></p>' : '') +
+                                (json_obj.duration_warning ? '<p style="padding:0;"><span style="color:red;">Warning: </span><strong>' + json_obj.duration_warning + '</strong></p>' : '') +
+                                '</div>'
                             );
                         }
                     } else {
