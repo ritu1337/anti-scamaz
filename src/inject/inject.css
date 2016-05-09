@@ -1,0 +1,32 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+.anti-scamaz {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* The animation code */
+@keyframes scamaz {
+    0%   {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+    50%  {
+        -moz-transform: scaleX(1);
+        -o-transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+}
+
+/* The element to apply the animation to */
+#wutface {
+    animation-name: scamaz;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
