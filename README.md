@@ -12,8 +12,8 @@ It looks like this:
 
 ![](http://i.imgur.com/1Zrfp2T.png)
 
-#### Short Video Demonstration
-https://www.youtube.com/watch?v=qu-FOwHVp7c
+#### Short Video Demonstration (stream safe ❤)
+####https://www.youtube.com/watch?v=E57P2snKWZk
 
 #### Links from the video
 Safe for stream, but you can preview them here.
