@@ -7,6 +7,19 @@ if (get_imgur_id == null) {
     var imgur_id = get_imgur_id[1];
     console.log(imgur_id);
     imgur_url = window.location.href;
+    
+    if (imgur_url.indexOf("i.imgur.com") > -1) {
+        console.log('loading');
+        $("body").append(
+            '<p id="loading" class="anti-scamaz" style="margin:20px 0 0 0;">Loading...</p>'
+        );
+    } else {
+        $("#cta-container-placeholder").hide();
+        $(".post-image:first").after(
+            '<div id="loading" style="width: 640px;padding: 20px;background: #2B2B2B;border-radius: 5px;position: relative;">' +
+            '<p style="padding:0;">Loading...</p></div>'
+        );
+    }
 
     $.ajax({
         'url': 'https://scamaz.xyz/check',
@@ -20,6 +33,7 @@ if (get_imgur_id == null) {
             var json_obj = response;
 
             $(document).ready(function() {
+                $( "#loading" ).remove();
                 if (imgur_url.indexOf("i.imgur.com") > -1) {
                     if (json_obj.status == 'ok') {
                         if (json_obj.is_scamaz) {
@@ -48,7 +62,7 @@ if (get_imgur_id == null) {
                         );
                     }
                 } else {
-                    $("#cta-container-placeholder").hide();
+                    $( "#loading" ).remove();
                     if (json_obj.status == 'ok') {
                         if ((imgur_url.indexOf("imgur.com/gallery/") > -1) || (imgur_url.indexOf("imgur.com/a/") > -1)) {
                             $(".post-image:first").after(
