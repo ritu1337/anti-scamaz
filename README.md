@@ -32,6 +32,11 @@ Safe for stream, but you can preview them here.
 #### Install:
 Chrome extension: https://chrome.google.com/webstore/detail/anti-scamaz/finbfifiddoeknaddinifpjofifcicof
 
+#### Protip:
+To make sure that the image status is not photoshopped in, it's a good idea to hover your mouse pointer over it, to see if it's a real text:
+
+![](http://i.imgur.com/DXhSHGr.png)
+
 #### How it works
 As soon as you open an imgur link, the anti-scamaz chrome extension sends the imgur link to the server. The server application opens and analyzes every frame (regardless of the image format) and sends the results back to chrome. It detects animated images 100% of the time.
 
