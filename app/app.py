@@ -26,7 +26,7 @@ handler.setFormatter(formatter)
 application.logger.setLevel(logging.DEBUG)
 application.logger.addHandler(handler)
 
-# Select DB 1 (DB 0 is being used by Nginx for page cache elsewhereeee)
+# Select DB 1 (DB 0 is being used by Nginx for page cache elsewhere)
 rd = redis.StrictRedis(host='localhost', port=6379, db='1')
 
 headers = {
