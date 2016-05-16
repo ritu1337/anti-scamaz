@@ -48,5 +48,9 @@ As soon as you open an imgur link, the anti-scamaz chrome extension sends the im
 - Use proxy in Chrome if you don't want the server to see your IP.
 - IP logging is completely disabled.
 
+#### Contact / Feedback
+Post here, tweet at @RiTu1337, or whisper me memes on twitch.
+
+
 #### Big beautiful man
 https://www.youtube.com/user/h3h3Productions
