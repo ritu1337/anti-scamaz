@@ -10,7 +10,7 @@ It displays:
 
 It looks like this:
 
-![h3h3productions](http://i.imgur.com/2YvFCLH.png)
+![h3h3productions](http://i.imgur.com/jJuAzIx.png)
 
 #### Short Video Demonstration (stream safe ❤)
 ####https://www.youtube.com/watch?v=E57P2snKWZk
