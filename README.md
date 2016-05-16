@@ -40,7 +40,7 @@ You can hover your mouse pointer over the image status to make sure that it's no
 ![](http://i.imgur.com/DXhSHGr.png)
 
 #### How it works
-As soon as you open an imgur link, the anti-scamaz chrome extension sends the imgur link to the server. The server application opens and analyzes every frame (regardless of the image format) and sends the results back to chrome. It detects animated images 100% of the time.
+As soon as you open an imgur link, the anti-scamaz chrome extension sends the imgur link to the server. The server application opens and analyzes every frame (regardless of the image format) and sends the results back to Chrome. It detects animated images 100% of the time.
 
 #### Privacy
 - Request to the API server is sent over a secure https connection.
