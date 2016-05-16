@@ -33,7 +33,7 @@ Safe for stream, but you can preview them here.
 Chrome extension: https://chrome.google.com/webstore/detail/anti-scamaz/finbfifiddoeknaddinifpjofifcicof
 
 #### Protip:
-To make sure that the image status is not photoshopped in, it's a good idea to hover your mouse pointer over it, to see if it's a real text:
+You can hover your mouse pointer over the image status to make sure that it's not photoshopped in:
 
 ![](http://i.imgur.com/DXhSHGr.png)
 
