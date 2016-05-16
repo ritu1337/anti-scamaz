@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, redirect
 from logging.handlers import RotatingFileHandler
-from cStringIO import StringIO
 from lxml.html import fromstring
+from cStringIO import StringIO
 from PIL import Image
 import ujson as json
 import requests
