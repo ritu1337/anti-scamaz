@@ -1,12 +1,14 @@
 #anti-scamaz
-Anti-scamaz is a Chrome extension that analyzes every imgur image.
+Anti-scamaz is a Chrome extension that analyzes every imgur link and detects animated JPG/PNG images.
 
 It displays:
 
-1. Real image format: (JPG, PNG, GIF...)
-2. Animated: Yes/No
-3. Duration in seconds (if it's animated) to know when it loops, so that you don't get tricked into showing a dick on stream.
-4. WutFace Alert about scamaz images (JPG, PNG...) that really are animated gifs.
+1. Real image format: [GIF, JPG, PNG...]
+2. Animated: [Yes/No]
+3. Duration in seconds (if animated)
+4. WutFace Alert about scamaz images (JPG, PNG...) that are animated gifs in disguise.
+
+Duration lets you know when a gif loops, so that you don't get tricked into showing a dick live on stream.
 
 It looks like this:
 
@@ -45,3 +47,6 @@ As soon as you open an imgur link, the anti-scamaz chrome extension sends the im
 - The only information being sent is the imgur link.
 - Use proxy in Chrome if you don't want the server to see your IP.
 - IP logging is completely disabled.
+
+#### Big beautiful man
+https://www.youtube.com/user/h3h3Productions
