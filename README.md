@@ -44,3 +44,4 @@ As soon as you open an imgur link, the anti-scamaz chrome extension sends the im
 - Request to the API server is sent over a secure https connection.
 - The only information being sent is the imgur link.
 - Use proxy in Chrome if you don't want the server to see your IP.
+- IP logging is completely disabled.
