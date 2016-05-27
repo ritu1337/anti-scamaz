@@ -13,7 +13,6 @@ import ujson as json
 
 application = Flask(__name__)
 application.config['PROPAGATE_EXCEPTIONS'] = True
-# application.debug = True
 
 LOG_FILENAME = '/var/log/imgur/error.log'
 
