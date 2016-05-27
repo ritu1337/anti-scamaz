@@ -1,14 +1,15 @@
-from flask import Flask, request, jsonify, redirect
-from logging.handlers import RotatingFileHandler
-from lxml.html import fromstring
-from cStringIO import StringIO
-from PIL import Image
-import ujson as json
-import requests
 import logging
-import redis
 import re
+from cStringIO import StringIO
+from logging.handlers import RotatingFileHandler
 
+import redis
+import requests
+from flask import Flask, jsonify, redirect, request
+from lxml.html import fromstring
+from PIL import Image
+
+import ujson as json
 
 application = Flask(__name__)
 application.config['PROPAGATE_EXCEPTIONS'] = True
@@ -30,6 +31,7 @@ application.logger.addHandler(handler)
 rd = redis.StrictRedis(host='localhost', port=6379, db='1')
 
 headers = {
+    'Connection': 'keep-alive',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
     'Accept-Encoding': 'gzip, deflate, sdch',
@@ -103,15 +105,17 @@ def check():
             if '/gallery/' in imgur_url.lower() or '/a/' in imgur_url.lower():
                 r_gallery = requests.get(imgur_url, headers=headers)
                 tree = fromstring(r_gallery.content)
-                
-                imgur_script = tree.xpath("(//body/div[@id='inside']//div[@class='post-image'])[1]//script")
+
+                imgur_script = tree.xpath(
+                    "(//body/div[@id='inside']//div[@class='post-image'])[1]//script")
                 m = re.search("gifUrl:(.*)'", imgur_script[0].text)
-                
+
                 imgur_url = m.group(1).strip().replace("'//", "http://")
                 imgur_url, imgur_id = format_url(imgur_url)
         except:
             try:
-                t = tree.xpath("(//body/div[@id='inside']//div[@class='post-image'])[1]//img")
+                t = tree.xpath(
+                    "(//body/div[@id='inside']//div[@class='post-image'])[1]//img")
                 imgur_url = t[0].get('src').strip().replace("//", "http://")
                 imgur_url, imgur_id = format_url(imgur_url)
             except:
@@ -159,7 +163,7 @@ def check():
 
         durations = []
         duration_warning = None
-        
+
         if is_animated:
             for frame in iter_frames(im):
                 try:
